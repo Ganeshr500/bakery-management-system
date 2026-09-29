@@ -1,0 +1,55 @@
+PROBLEM STATEMENT
+=================
+
+The problem
+-----------
+A lot of small bakeries still keep track of stock and sales in a paper
+register or a basic spreadsheet. It works until it doesn't: nobody is sure
+how many croissants are really left, an order gets accepted for something
+that already sold out, and simple questions like "what sells the most?" or
+"what are we about to run out of?" take ages to answer.
+
+BakeryHub is my attempt at a small, reliable, script-based tool that keeps
+inventory and orders consistent and answers those questions on demand. It
+uses only what we learned in the first semester of Python, plus sqlite3
+from the standard library.
+
+
+Scope
+-----
+BakeryHub is a single-shop, console-based app meant for one bakery's
+owner or counter staff.
+
+What it does:
+  - keeps a saved catalogue of items (id, name, category, price, stock)
+  - takes customer orders: checks stock, deducts it, works out the bill
+    and records the sale
+  - cancels an order and puts the stock back
+  - shows low-stock alerts, revenue numbers and best sellers
+
+What it does not do (on purpose):
+  - multiple branches or shops
+  - a website or a GUI
+  - online payments
+  - a separate database server (data lives in one local SQLite file,
+    data/bakeryhub.db)
+
+
+Who uses it
+-----------
+Main user : the bakery owner / counter staff who manage stock and enter
+            orders.
+Indirect  : customers, whose purchases get recorded and billed.
+
+
+Main features
+-------------
+1. Inventory management - add, view, restock, change the price of, and
+   delete items.
+2. Order processing - multi-item orders with automatic stock checks and
+   deduction. If any line fails, nothing is deducted. Cancelling an
+   order restores the stock.
+3. Reports - low-stock alert, revenue summary (total and average order
+   value) and a best-sellers ranking.
+4. Input validation, clear error messages and a log file of everything
+   that happens.

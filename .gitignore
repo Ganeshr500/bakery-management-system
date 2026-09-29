@@ -1,0 +1,17 @@
+# python junk
+__pycache__/
+*.pyc
+
+# runtime files (created when the app runs)
+data/*.db
+data/*.json
+logs/
+
+# editors and os
+.vscode/
+.idea/
+.DS_Store
+
+# virtual environments
+venv/
+.venv/

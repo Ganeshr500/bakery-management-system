@@ -1,0 +1,2 @@
+# BakeryHub only uses python's standard library (sqlite3, json, logging, re, unittest...)
+# so there is nothing to pip install. Just python 3.8 or newer.
