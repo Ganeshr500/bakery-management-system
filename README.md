@@ -26,7 +26,7 @@ nothing beyond standard Python.
 You need Python 3.8 or newer.
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Ganeshr500/bakery-hub.git
 cd bakeryhub
 python3 main.py
 ```
