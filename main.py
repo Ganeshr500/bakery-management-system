@@ -36,7 +36,7 @@ def add():
     d = ask("Unit price: ")
     e = ask("Initial stock quantity: ")
     i = s.add_item(a, b, c, d, e)
-    print(f"✔ Added: {i['item_id']} - {i['name']} ({i['stock_qty']} in stock)")
+    print(f"Added: {i['item_id']} - {i['name']} ({i['stock_qty']} in stock)")
 
 
 def show_all():
@@ -61,20 +61,20 @@ def price():
     a = ask("Item ID: ")
     b = ask("New price: ")
     i = s.update_price(a, b)
-    print(f"✔ {i['item_id']} price is now {i['unit_price']}")
+    print(f"{i['item_id']} price is now {i['unit_price']}")
 
 
 def restock():
     a = ask("Item ID: ")
     b = ask("Additional quantity: ")
     i = s.restock(a, b)
-    print(f"✔ {i['item_id']} stock is now {i['stock_qty']}")
+    print(f"{i['item_id']} stock is now {i['stock_qty']}")
 
 
 def delete():
     a = ask("Item ID: ")
     s.delete_item(a)
-    print(f"✔ Deleted item {a.upper()}")
+    print(f"Deleted item {a.upper()}")
 
 
 def order():
@@ -87,7 +87,7 @@ def order():
             break
         cart[a] = ask("  Quantity: ")
     o = s.place_order(name, cart)
-    print(f"✔ Order placed: {o['order_id']} | Total: {o['total_amount']}")
+    print(f"Order placed: {o['order_id']} | Total: {o['total_amount']}")
 
 
 def show_order():
@@ -99,7 +99,7 @@ def show_order():
 
 def cancel():
     o = s.cancel_order(ask("Order ID to cancel: "))
-    print(f"✔ Order {o['order_id']} cancelled, stock restored.")
+    print(f"Order {o['order_id']} cancelled, stock restored.")
 
 
 ACTIONS = {
@@ -135,10 +135,10 @@ def main():
         try:
             f()
         except BakeryError as e:
-            print(f"⚠ Error: {e}")
+            print(f"Error: {e}")
             log.warning(f"handled error: {e}")
         except Exception as e:
-            print("⚠ Something went wrong. Check logs/app.log for details.")
+            print("Something went wrong. Check logs/app.log for details.")
             log.exception(f"unexpected error: {e}")
 
 
